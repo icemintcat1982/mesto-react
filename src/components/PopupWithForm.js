@@ -1,5 +1,5 @@
 function PopupWithForm({name, title, children, isOpen, onClose}) {
-    console.log(isOpen);
+    // console.log(isOpen)
     return(
         <section className={`popup popup_${name} ${isOpen ? 'popup_active' : ''}`}>
             <div className="popup__content">
@@ -8,7 +8,7 @@ function PopupWithForm({name, title, children, isOpen, onClose}) {
                 <form className="popup__form" name={name} novalidate>
                  
                     {children} 
-              
+            
                     <button className="popup__submit" type="submit">Да</button>
                 </form>
             </div>

@@ -41,15 +41,15 @@ function App() {
     
   return (
     <div className="page">
-<Header/>;
+<Header/>
 <Main 
 onEditAvatar={handleEditAvatarClick}
 onEditProfile={handleEditProfileClick}
 onAddPlace={handleAddPlaceClick}
 onCardClick={handleCardClick}
 
-/>;  
-<Footer/>;
+/>
+<Footer/>
 <PopupWithForm
 name='profile_submit'
 title='Редактировать профиль'
@@ -100,7 +100,7 @@ onClose={closeAllPopups}>
 <span className="popup__input-error" id="avatar-input-error">Введите ссылку на картинку
 </span>
 </fieldset>
-</PopupWithForm>;
+</PopupWithForm>
 
 <PopupWithForm
 name='card_submit'
@@ -131,12 +131,10 @@ onClose={closeAllPopups}>
 <span className="popup__input-error" id="link-input-error"
     >Введите адрес сайта</span>
 </fieldset>
-</PopupWithForm>;
+</PopupWithForm>
 <ImagePopup
 card={selectedCard}
-onClose={closeAllPopups}/>;
-
-
+onClose={closeAllPopups}/>
 
 
         <section className="popup popup_profile_submit">
