@@ -4,22 +4,22 @@ function Card({card, onCardClick}) {
         onCardClick(card)
     }
     return(
-        <li class="element__card">
+        <li className="element__card">
         <button
-            class="element__delete"
+            className="element__delete"
             type="button"
             title="delete"
         ></button>
-        <img class="element__image" src={card.link} alt={card.name} onClick={handleCardClick} />
-        <div class="element__title">
-            <h2 class="element__text">{card.name}</h2>
-            <div class="element__like-section">
+        <img className="element__image" src={card.link} alt={card.name} onClick={handleCardClick} />
+        <div className="element__title">
+            <h2 className="element__text">{card.name}</h2>
+            <div className="element__like-section">
                 <button
-                    class="element__button"
+                    className="element__button"
                     type="button"
                     title="like"
                 ></button>
-                <span class="element__like-counter">{card.likes.length}</span>
+                <span className="element__like-counter">{card.likes.length}</span>
             </div>
         </div>
     </li>

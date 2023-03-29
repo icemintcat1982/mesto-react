@@ -38,7 +38,7 @@ console.log(cards)
                 className="profile__avatar-edit-btn" 
                 type="button" 
                 onClick={onEditAvatar}>
-                <img className="profile__avatar" src={userAvatar} alt="#" />
+                <img className="profile__avatar" src={userAvatar} alt="avatar" />
                 </button>
 
                 <div className="profile__info">

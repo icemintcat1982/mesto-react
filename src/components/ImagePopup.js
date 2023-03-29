@@ -1,8 +1,10 @@
+
+
 function ImagePopup({card, onClose}) {
     console.log(card)
     return(
 <section className={`popup popup_photo_open ${Object.keys(card).length !== 0 ? 'popup_active' : ''}`}>
-<figure className="popup__open-photo popup__content">
+<figure className="popup__open-photo">
     <button
         className="popup__close popup__close-photo"
         type="button"
