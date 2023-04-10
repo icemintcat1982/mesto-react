@@ -1,35 +1,14 @@
 import React from "react";
-import {api} from "../utils/Api";
 import Card from './Card';
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 
-function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick}) {
+function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards}) {
 
-    const [userName, setUserName] = React.useState('');
-    const [userDescription, setUserDescription] = React.useState('');
-    const [userAvatar, setUserAvatar] = React.useState('');
-    const [cards, setCards] = React.useState([]);
+
+    const currentUser = React.useContext(CurrentUserContext);
     
-    React.useEffect(() => {
-        Promise.all([
-            api.getUserInfo(),
-            api.getCards()
-        ])
-        .then(([userData, cardsData]) => {
-            setUserName(userData.name);
-            setUserDescription(userData.about);
-            setUserAvatar(userData.avatar);  
-            setCards(cardsData);  
-            
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-         
-    },
-    []
-    )
-console.log(cards)
+   
 
     return(
         <main className="main">
@@ -38,17 +17,17 @@ console.log(cards)
                 className="profile__avatar-edit-btn" 
                 type="button" 
                 onClick={onEditAvatar}>
-                <img className="profile__avatar" src={userAvatar} alt="avatar" />
+                <img className="profile__avatar" src={currentUser.avatar} alt="avatar" />
                 </button>
 
                 <div className="profile__info">
-                    <h1 className="profile__name">{userName}</h1>
+                    <h1 className="profile__name">{currentUser.name}</h1>
                     <button
                         className="profile__button profile__button_type_edit"
                         type="button"
                         title="edit profile"
                         onClick={onEditProfile}></button>
-                    <p className="profile__description">{userDescription}</p>
+                    <p className="profile__description">{currentUser.description}</p>
                 </div>
 
                 <button
