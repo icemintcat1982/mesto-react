@@ -41,7 +41,8 @@ function App() {
             setCards((state) =>
                 state.map((с) => (с._id === card._id ? newCard : с))
             );
-        });
+        })
+        .catch((err) => console.log(err));
     };
 
     const handleCardDelete = (card) => {
